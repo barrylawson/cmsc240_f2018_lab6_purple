@@ -35,6 +35,22 @@ int main()
    std::cout << "DoubleVector:" << std::endl;
    std::cout << "-------------" << std::endl;
 
+   for (int i = 0; i < 10; i++) { dv.put(i + 65.25); }
+   dv.put(94.25, 100);
+
+   std::cout << "size = " << dv.size() << std::endl;
+   for (int i = 0; i < dv.size(); i++)
+   {
+      std::cout << dv.get(i) << " ";
+   }
+   std::cout << std::endl;
+
+   try {
+      std::cout << dv.get(100) << " ";
+   } catch(std::out_of_range& oor) {
+      std::cout << "Out of range error: " << oor.what() << std::endl;
+   }
+
    //-------------------------------------------------------------------------
 
    // using empty IntegerVector, test appending cv & dv from above 
